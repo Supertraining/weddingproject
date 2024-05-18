@@ -17,6 +17,7 @@ export default function UploadPictures() {
     }
   };
 
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -25,17 +26,11 @@ export default function UploadPictures() {
       data.append('file', image);
       data.append('upload_preset', 'jtm5a5jy');
       try {
-        const response: Response = await fetch('/api/upload-image', {
-          method: 'POST',
-          headers: {
-            "Content-type": "application/json"
-          },
-          body: data
-
-        })
-        console.log(response)
-        if (response && formRef.current) {
+        const url: string = await insertPicture(data);
+        console.log(url)
+        if (url && formRef.current) {
             formRef.current.reset()
+            setImage(null)
         }
 
       } catch (error) {
@@ -43,25 +38,6 @@ export default function UploadPictures() {
       }
     }
   }
-  // const handleSubmit = async (e: FormEvent) => {
-  //   e.preventDefault();
-
-  //   if (image) {
-  //     const data = new FormData();
-  //     data.append('file', image);
-  //     data.append('upload_preset', 'jtm5a5jy');
-  //     try {
-  //       const url: string = await insertPicture(data);
-  //       console.log(url)
-  //       if (url && formRef.current) {
-  //           formRef.current.reset()
-  //       }
-
-  //     } catch (error) {
-  //       console.log('Error al subir la imagen:', error);
-  //     }
-  //   }
-  // }
 
   return (
     <div>
