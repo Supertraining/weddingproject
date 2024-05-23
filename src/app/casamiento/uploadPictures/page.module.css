@@ -1,0 +1,44 @@
+.formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+    border-radius: 20px;
+    background-color: #edf0f4;
+    width: fit-content;
+    min-height: 200px;
+    padding: 2%;
+}
+
+.folderIcon {
+    width:100%;
+}
+ .span {
+    color:  #4c4e53;
+    cursor: default;
+    font-size: .875em;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.5;
+ }
+
+.drag {  
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+    border-radius: 20px;
+    background-color: #edf0f4;
+    width: fit-content;
+    min-height: 200px;
+    padding: 2%;
+    background-color: lightblue;
+}
+

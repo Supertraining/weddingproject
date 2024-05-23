@@ -3,6 +3,7 @@ import { getPictures } from '@/app/lib/data'
 import Picture from '@/app/lib/interfaces'
 import React, { useEffect, useState } from 'react'
 import styles from './page.module.css'
+import Image from 'next/image'
 
 export default function Pictures() {
   const [Pictures, setPictures] = useState<Picture[] | null>(null)
@@ -25,7 +26,13 @@ export default function Pictures() {
       {Pictures 
       && Pictures.map((picture) => (
         <div key={picture.id} className={styles.picture_container}>
-          <img src={picture.url} alt={''} className={styles.picture} />
+          <Image 
+          src={picture.url} 
+          alt={'casamiento'} 
+          width={50}
+          height={50}
+          className={styles.picture} 
+          />
           <p>TITULO DE LA FOTO</p>
         </div>
       ))}
