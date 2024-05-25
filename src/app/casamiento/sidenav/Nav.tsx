@@ -3,7 +3,7 @@ import styles from './sidenav.module.css'
 
 // import { PowerIcon } from '@heroicons/react/24/outline';
 
-export default function SideNav() {
+export default function Nav() {
   return (
     <div className={styles.sidenav_container}>
         <NavLinks />

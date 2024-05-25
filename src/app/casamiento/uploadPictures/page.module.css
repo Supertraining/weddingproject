@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 .form {
@@ -42,3 +43,9 @@
     background-color: lightblue;
 }
 
+.chevron_left{
+    width: 3rem;
+    cursor: pointer;
+    margin: 1rem;
+    color: black;
+}

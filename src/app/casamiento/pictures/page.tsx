@@ -4,6 +4,9 @@ import Picture from '@/app/lib/interfaces'
 import React, { useEffect, useState } from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
+import {
+  ChevronLeftIcon
+} from '@heroicons/react/24/outline';
 
 export default function Pictures() {
   const [Pictures, setPictures] = useState<Picture[] | null>(null)
@@ -22,7 +25,13 @@ export default function Pictures() {
   }, [])
 
   return (
-    <div className={styles.pictures_container}>
+    <div className={styles.container}>
+      
+      <div>
+      <ChevronLeftIcon onClick={()=> window.history.back()} className={styles.chevron_left} />
+      </div>
+
+    <div className={styles.pictures_container} >
       {Pictures 
       && Pictures.map((picture) => (
         <div key={picture.id} className={styles.picture_container}>
@@ -33,9 +42,10 @@ export default function Pictures() {
           height={50}
           className={styles.picture} 
           />
-          <p>TITULO DE LA FOTO</p>
         </div>
       ))}
+    </div>
+
     </div>
   )
 }

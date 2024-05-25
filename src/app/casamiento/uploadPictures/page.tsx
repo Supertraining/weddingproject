@@ -2,6 +2,9 @@
 import React, { useRef } from 'react';
 import { insertPicture } from '@/app/lib/data';
 import { ChangeEvent, FormEvent, useState } from 'react';
+import {
+  ChevronLeftIcon
+} from '@heroicons/react/24/outline';
 import styles from './page.module.css'
 
 export default function UploadPictures() {
@@ -79,6 +82,10 @@ export default function UploadPictures() {
 
   return (
     <div className={styles.formContainer}>
+
+    <div>
+      <ChevronLeftIcon onClick={()=> window.history.back()} className={styles.chevron_left} />
+      </div>
       <form onSubmit={handleSubmit} ref={formRef} 
             className={isDragging ? styles.drag : styles.form}
             onDragOver={handleOnDragOver}
